@@ -1,0 +1,5 @@
+{
+  "markdown.copyFiles.destination": {
+    "DP-900/**/*.md": "/assets/DP-900/${documentBaseName}-${fileName}"
+  }
+}
