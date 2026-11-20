@@ -41,3 +41,7 @@ Ficheros de datos en [DP-900/files](./DP-900/files/).
 - [Lab 14 · Foundry IQ in Foundry](./AI-901/enunciados/ai-fundamentals/07-foundry-iq.md)
 
 Ficheros de datos en [AI-901/files](./AI-901/files/).
+
+## Recursos
+
+- [Mapa de certificaciones Microsoft](./assets/Certification-Poster_en-us.pdf)
