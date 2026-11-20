@@ -10,6 +10,7 @@ Labs de Azure para la preparación de DP-900 y AI-901.
 - [Lab 2](./DP-900/Lab2.md)
 - [Lab 3](./DP-900/Lab3.md)
 - [Lab 4](./DP-900/Lab4.md)
+- [Lab 5](./DP-900/Lab5.md)
 
 ### Enunciados
 
