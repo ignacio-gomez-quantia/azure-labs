@@ -26,6 +26,8 @@ Ficheros de datos en [DP-900/files](./DP-900/files/).
 
 ## AI-901
 
+- [Lab 1](./AI-901/Lab1.md)
+
 ### Enunciados
 
 - [Lab 1 · Explore AI workloads](./AI-901/enunciados/ai-concepts/00-ai-workloads.md)
