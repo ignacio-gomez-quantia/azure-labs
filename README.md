@@ -28,6 +28,7 @@ Ficheros de datos en [DP-900/files](./DP-900/files/).
 
 - [Lab 1](./AI-901/Lab1.md)
 - [Lab 2](./AI-901/Lab2.md)
+- [Lab 3](./AI-901/Lab3.md)
 
 ### Enunciados
 
