@@ -32,6 +32,7 @@ Ficheros de datos en [DP-900/files](./DP-900/files/).
 - [Lab 4](./AI-901/Lab4.md)
 - [Lab 5](./AI-901/Lab5.md)
 - [Lab 6](./AI-901/Lab6.md)
+- [Cuestionario](./AI-901/Cuestionario.md)
 
 ### Enunciados
 
@@ -49,6 +50,7 @@ Ficheros de datos en [DP-900/files](./DP-900/files/).
 - [Lab 12 · Computer vision in Foundry](./AI-901/enunciados/ai-fundamentals/05a-image-analysis.md)
 - [Lab 13 · Information extraction in Foundry](./AI-901/enunciados/ai-fundamentals/06a-content-understanding.md)
 - [Lab 14 · Foundry IQ in Foundry](./AI-901/enunciados/ai-fundamentals/07-foundry-iq.md)
+- [Cuestionario de preguntas](./AI-901/enunciados/cuestionario-ai-901.md)
 
 Ficheros de datos en [AI-901/files](./AI-901/files/).
 
