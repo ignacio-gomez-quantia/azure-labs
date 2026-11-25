@@ -70,21 +70,31 @@ El ruido de fondo, el viento en exteriores, los cortes en el audio, los acentos 
 
 *Explica qué es la visión por computador y describe las principales tareas que abarca (clasificación de imágenes, detección de objetos, segmentación semántica, etc.), indicando la diferencia entre ellas.*
 
+La visión por computador es la parte de la IA que permite a un ordenador entender imágenes y vídeos. La clasificación dice qué hay en la imagen entera ("esto es un Apple II", como en el Lab 1). La detección de objetos además dice dónde está cada cosa, con un recuadro, y puede encontrar varios objetos en la misma imagen. La segmentación va píxel a píxel y marca la forma exacta de cada objeto.
+
 ### Pregunta 12
 
 *¿Cómo representa un ordenador una imagen digital? Explica qué es un filtro (o kernel) en el procesamiento de imágenes, cómo se aplica sobre los píxeles y para qué sirve (por ejemplo, detectar bordes o difuminar).*
+
+Para un ordenador una imagen es una tabla de píxeles, y cada píxel es un número que indica su color o su brillo (en color son tres números, rojo, verde y azul). Un filtro o kernel es una tabla pequeña de números que se va pasando por encima de la imagen y recalcula cada píxel según sus vecinos. Según los números del filtro, puede sacar los bordes de los objetos o difuminar la imagen.
 
 ### Pregunta 13
 
 *Describe qué es una red neuronal convolucional (CNN) y explica sus características principales. ¿Por qué se dice que las CNN aprenden características de forma jerárquica?*
 
+Una CNN es una red neuronal pensada para imágenes, que usa filtros como los de la pregunta anterior, pero en vez de definirlos a mano los aprende sola durante el entrenamiento. Se dice que aprende de forma jerárquica porque las primeras capas detectan cosas simples como bordes, las siguientes combinan eso en formas y las últimas reconocen objetos completos.
+
 ### Pregunta 14
 
 *Explica qué es un Vision Transformer (ViT) y en qué se diferencia de una CNN en la forma de procesar una imagen. ¿Qué son los modelos multimodales y qué permiten hacer al combinar imagen y texto?*
 
+Un Vision Transformer usa la misma idea que los modelos de lenguaje: parte la imagen en trozos pequeños y los trata como si fueran tokens, mirando cómo se relaciona cada trozo con todos los demás. Una CNN, en cambio, va mirando la imagen por zonas con sus filtros. Los modelos multimodales mezclan imagen y texto, así que puedes pasarle una foto y preguntarle cosas sobre ella, como hicimos en el Lab 5.
+
 ### Pregunta 15
 
 *Explica cómo puede la IA generativa crear imágenes nuevas a partir de una descripción en texto (prompt). Menciona algún caso de uso empresarial y algún riesgo o consideración ética asociado.*
+
+La IA generativa crea imágenes a partir de ruido que va limpiando poco a poco, guiándose por lo que le pides en el prompt hasta que la imagen encaja con la descripción. Un caso de uso es el marketing, para sacar imágenes de producto o de campañas sin hacer una sesión de fotos. Como riesgos están los deepfakes, los derechos de autor de las imágenes con las que se entrenó el modelo y que puede repetir estereotipos.
 
 ## Sección 4. Extracción de información
 
@@ -92,18 +102,28 @@ El ruido de fondo, el viento en exteriores, los cortes en el audio, los acentos 
 
 *Explica qué es la extracción de información y por qué es especialmente útil cuando se trabaja con datos no estructurados (documentos, imágenes, formularios escaneados). Pon un ejemplo de proceso de negocio que se beneficie de ella.*
 
+La extracción de información es sacar datos concretos de cosas que no tienen una estructura fija, como PDFs, fotos o formularios escaneados, y dejarlos ordenados para poder usarlos en un sistema. Es útil porque mucha información de las empresas está en ese formato y meterla a mano es lento y da errores. Por ejemplo, en la gestión de gastos haces una foto al ticket y el sistema saca el comercio, la fecha y el importe solo, como vimos en el Lab 6 con los recibos.
+
 ### Pregunta 17
 
 *¿Qué es el reconocimiento óptico de caracteres (OCR)? Describe las fases generales por las que pasa una imagen hasta obtener el texto que contiene.*
+
+El OCR es la tecnología que lee el texto que aparece en una imagen y lo convierte en texto que se puede copiar y editar. Primero se mejora la imagen (enderezarla, quitar ruido, ajustar el contraste), luego se buscan las zonas donde hay texto, después se reconocen las letras y palabras, y al final se corrigen errores y se devuelve el texto con su posición en la imagen.
 
 ### Pregunta 18
 
 *Explica en qué consiste la extracción y el mapeo de campos (field extraction and mapping). ¿Por qué no basta con obtener el texto mediante OCR para automatizar, por ejemplo, el procesamiento de facturas?*
 
+Consiste en buscar dentro del texto los datos que te interesan y meterlos en campos con nombre, como número de factura, fecha, proveedor o total. El OCR solo no basta porque te devuelve todo el texto seguido, pero no sabe qué es cada cosa: lee "121,00" pero no sabe si es el total o el IVA. Además cada proveedor hace sus facturas de una forma distinta, así que hace falta algo que entienda la estructura del documento.
+
 ### Pregunta 19
 
 *Diferencia entre extraer texto de un documento y extraer datos estructurados de él. Ilústralo con un ejemplo concreto (una factura, un recibo o un formulario de alta de cliente) indicando qué campos se obtendrían.*
 
+Extraer texto es sacar todas las palabras del documento tal cual, sin saber qué significa cada una. Extraer datos estructurados es sacar valores concretos ya clasificados en campos, listos para guardarlos en una base de datos. Por ejemplo, con el recibo de Northwind Traders del Lab 6, el texto sería todo el ticket línea a línea, mientras que los datos estructurados serían: comercio Northwind Traders, dirección, teléfono, fecha 2025-08-25, hora 21:13:26 y total 11,85 $.
+
 ### Pregunta 20
 
 *Describe, paso a paso, una solución de extracción de información de principio a fin para un departamento de cuentas a pagar: desde la recepción del documento hasta la incorporación de los datos a un sistema. Indica en qué pasos intervienen el OCR y el mapeo de campos, y qué control de calidad añadirías.*
+
+Primero llegan las facturas por correo o en papel, y las de papel se escanean. Después se pasa el OCR para sacar el texto, y con el mapeo de campos se sacan proveedor, número, fecha, importes y total. Luego se validan los datos, por ejemplo que el proveedor exista y que las cuentas cuadren. Si algo no cuadra o el sistema no está seguro, lo revisa una persona. Al final los datos se cargan en el ERP para aprobar y pagar la factura. Como control de calidad pondría un mínimo de confianza para cada campo y revisaría de vez en cuando una muestra a mano.
