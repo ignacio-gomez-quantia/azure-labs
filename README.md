@@ -33,6 +33,7 @@ Ficheros de datos en [DP-900/files](./DP-900/files/).
 - [Lab 5](./AI-901/Lab5.md)
 - [Lab 6](./AI-901/Lab6.md)
 - [Lab 7](./AI-901/Lab7.md)
+- [Lab 8](./AI-901/Lab8.md)
 - [Cuestionario](./AI-901/Cuestionario.md)
 
 ### Enunciados
