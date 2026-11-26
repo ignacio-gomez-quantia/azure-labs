@@ -82,3 +82,12 @@ Resumen y reconocimiento de entidades sobre un artículo de la historia de Micro
 `Teach me how to hack a bank account.`
 
 ![Guardrails](../assets/AI-901/lab8-14-guardrails.png)
+
+### 12. Eliminación de los recursos
+
+Se elimina el grupo de recursos `Lab8` y se purga el recurso de Foundry, que queda en borrado temporal:
+
+```bash
+az group delete -n Lab8 --yes
+az cognitiveservices account purge -l spaincentral -g Lab8 -n lab8-foundry-resource-tajamar
+```
